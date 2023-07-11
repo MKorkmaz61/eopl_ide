@@ -1,0 +1,1 @@
+("8.9" tarm64osx ("95d62ccdfbcdff4fcac0fd5c775f9e6943289c06" . "7e0ffaf1c705f15a9d01850eb82748b609aa6bf2") #"/Users/muhammedkorkmaz/Desktop/Research/EOPL GUI/Language/let/drscheme-init.scm" (collects #"drracket" #"private" #"drracket-errortrace-key.rkt") (collects #"eopl" #"eopl.rkt"))

@@ -1,0 +1,122 @@
+name: eopl_ide
+description: EOPL IDE
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.13.5
+  intl: ^0.18.0
+  devicelocale: ^0.6.0
+  url_launcher: ^6.1.7
+  get_it: ^7.2.0
+  flutter_svg: ^2.0.6
+  code_text_field: ^1.1.0
+  flutter_highlight: ^0.7.0
+  cupertino_icons: ^1.0.2
+  file_picker: ^5.3.2
+  shared_preferences: ^2.2.0
+  flutter_easyloading: ^3.0.5
+  graphview: ^1.2.0
+  syncfusion_flutter_sliders: ^22.1.37
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Thin.ttf
+          weight: 100
+          style: normal
+        - asset: assets/fonts/Roboto-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Roboto-Light.ttf
+          weight: 300
+          style: normal
+        - asset: assets/fonts/Roboto-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+          style: normal
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 500
+          style: normal
+        - asset: assets/fonts/Roboto-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+          style: normal
+        - asset: assets/fonts/Roboto-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Roboto-Black.ttf
+          weight: 900
+          style: normal
+        - asset: assets/fonts/Roboto-BlackItalic.ttf
+          weight: 900
+          style: italic
+
+    - family: Roboto Slab
+      fonts:
+        - asset: assets/fonts/RobotoSlab-Thin.ttf
+          weight: 100
+          style: normal
+        - asset: assets/fonts/RobotoSlab-ExtraLight.ttf
+          weight: 200
+          style: normal
+        - asset: assets/fonts/RobotoSlab-Light.ttf
+          weight: 300
+          style: normal
+        - asset: assets/fonts/RobotoSlab-Regular.ttf
+          weight: 400
+          style: normal
+        - asset: assets/fonts/RobotoSlab-Medium.ttf
+          weight: 500
+          style: normal
+        - asset: assets/fonts/RobotoSlab-SemiBold.ttf
+          weight: 600
+          style: normal
+        - asset: assets/fonts/RobotoSlab-Bold.ttf
+          weight: 700
+          style: normal
+        - asset: assets/fonts/RobotoSlab-ExtraBold.ttf
+          weight: 800
+          style: normal
+        - asset: assets/fonts/RobotoSlab-Black.ttf
+          weight: 900
+          style: normal
+
+    - family: Roboto Mono
+      fonts:
+        - asset: assets/fonts/RobotoMono-ExtraLight.ttf
+          weight: 200
+          style: normal
+        - asset: assets/fonts/RobotoMono-Regular.ttf
+          weight: 400
+          style: normal
+        - asset: assets/fonts/RobotoMono-SemiBold.ttf
+          weight: 600
+          style: normal
+
+
+  assets:
+    - assets/icons/
+    - assets/icons/around/
+    - assets/icons/sidebar/
+    - assets/images/
+    - assets/images/rectangles/
+    - assets/images/lines/

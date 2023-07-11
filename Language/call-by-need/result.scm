@@ -1,0 +1,11 @@
+#lang racket
+(require "top.scm")
+(require "globalstack.scm")
+(run "let p = newpair(22,33) in begin setleft p = 77; left(p) end")
+(define print-element (lambda (i) (pretty-print i) (display "\n*element*\n")))
+(display "\n**split**\n")
+(map print-element (get-expstack))
+(display "\n**split**\n")
+(map print-element (get-envstack))
+(display "\n**split**\n")
+(map print-element (get-stostack))

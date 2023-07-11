@@ -1,0 +1,7 @@
+(module interp (lib "eopl.ss" "eopl") 
+  (require "drscheme-init.scm")
+  (define vec (make-vector 5))
+  (if (vector? vec) (eopl:printf "yes") (eopl:printf "no"))
+  (vector-set! vec (- (vector-length vec) 1) 3)
+  (eopl:printf (vector->list vec))
+  )
