@@ -1,6 +1,7 @@
 import 'package:eopl_ide/Code_Examples.dart';
 import 'package:eopl_ide/base/Colors.dart';
 import 'package:eopl_ide/base/TextStyles.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class Examples extends StatefulWidget {
@@ -27,39 +28,47 @@ class _ExamplesState extends State<Examples> {
       const SizedBox(
         height: 20,
       ),
-      for (int i = 0; i < Code_Examples.example_dict.length; i++) ...[
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            width: double.infinity,
-            height: 50,
-            color: grayRGB030,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: InkWell(
-                onTap: () {
-                  super.widget.Update_Code(
-                      Code_Examples.example_dict.values.elementAt(i));
-                },
-                child: TextFormField(
-                  initialValue: Code_Examples.example_dict.keys
-                      .elementAt(i)
-                      .replaceAll("_", " "),
-                  enabled: false,
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    disabledBorder: InputBorder.none,
-                    errorBorder: InputBorder.none,
+      Container(
+        height: MediaQuery.of(context).size.height * 0.8,
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            for (int i = 0; i < Code_Examples.example_dict.length; i++) ...[
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  width: 10,
+                  height: 50,
+                  color: grayRGB030,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: InkWell(
+                      onTap: () {
+                        super.widget.Update_Code(
+                            Code_Examples.example_dict.values.elementAt(i));
+                      },
+                      child: TextFormField(
+                        initialValue: Code_Examples.example_dict.keys
+                            .elementAt(i)
+                            .replaceAll("_", " "),
+                        enabled: false,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                        ),
+                        cursorColor: white100,
+                        style: tsPath,
+                      ),
+                    ),
                   ),
-                  cursorColor: white100,
-                  style: tsPath,
                 ),
               ),
-            ),
-          ),
+            ]
+          ],
         ),
-      ]
+      )
     ]);
   }
 }

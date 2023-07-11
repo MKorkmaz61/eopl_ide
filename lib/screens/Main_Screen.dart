@@ -150,8 +150,7 @@ class _CodeEditorMainScreenDesktopState
     indexLang = 0;
     currentLangDisplay = langNamesDisplay[0];
 
-    const source =
-        "void main() {\n  if (x == true) {\n    print(\"Hello, world!\");\n  else {\n    print(1234567890};\n  }\n}";
+    const source = "letrec f(x) = -(x,1) in (f 33)}";
 
     _ctrlCodeField = CodeController(
       text: source,
@@ -170,8 +169,9 @@ class _CodeEditorMainScreenDesktopState
         "proc": const TextStyle(color: Colors.deepOrangeAccent),
         "let": const TextStyle(color: Colors.deepOrangeAccent),
         "define": const TextStyle(color: Colors.deepOrangeAccent),
-        "pair": const TextStyle(color: Colors.deepOrangeAccent),
+        "newpair": const TextStyle(color: Colors.deepOrangeAccent),
         "main": const TextStyle(color: Colors.lightBlue),
+        "letrec": const TextStyle(color: Colors.lightBlue),
         "function": const TextStyle(color: Colors.lightBlue),
         "begin": const TextStyle(color: Colors.lightBlue),
         "end": const TextStyle(color: Colors.lightBlue),
@@ -324,6 +324,7 @@ class _CodeEditorMainScreenDesktopState
     } else {
       EasyLoading.showSuccess("Build successful!");
     }
+    print(eoplResult.err);
 
     var splitResult = eoplResult.out.split("**split**");
     var expSplitResult = splitResult[1].split("*element*");
@@ -334,8 +335,7 @@ class _CodeEditorMainScreenDesktopState
     graph.edges.clear();
     graph.nodes.clear();
     Set_AST(tree);
-    var envSplitResult = splitResult[2].split("*element*");
-    print(envSplitResult);
+    var envSplitResult = splitResult[2].trim().split("*element*");
     Fill_Env_List(envSplitResult);
 
     var stoSplitResult = splitResult[3].split("*element*");
@@ -448,6 +448,11 @@ class _CodeEditorMainScreenDesktopState
   EOPL_IO.Stack<String> Parse_ENV_Extended(EOPL_IO.Stack<String> stack) {
     File file = File(
         "${Code_Utils.instance.GL_LANG_DIR_PATH}\\${Code_Utils.instance.GL_SELECTED_LANG}\\store.scm");
+
+    if (Platform.isMacOS || Platform.isLinux) {
+      file = File(
+          "${Code_Utils.instance.GL_LANG_DIR_PATH}/${Code_Utils.instance.GL_SELECTED_LANG}/store.scm");
+    }
     bool hasStore = file.existsSync();
 
     while (EOPL_IO.TextIO.moreInput()) {
@@ -847,7 +852,7 @@ class _CodeEditorMainScreenDesktopState
               Visibility(
                 visible: isExamplesVisible,
                 child: Container(
-                  width: 700,
+                  width: SW * 0.3,
                   height: SH,
                   color: grayRGB040,
                   child: Examples(Update_Code: Update_Code),
@@ -1033,7 +1038,7 @@ class _CodeEditorMainScreenDesktopState
               Visibility(
                 visible: isExamplesVisible,
                 child: Container(
-                  width: 700,
+                  width: SW * 0.3,
                   height: SH,
                   color: grayRGB040,
                   child: Examples(Update_Code: Update_Code),
@@ -1188,7 +1193,7 @@ class _CodeEditorMainScreenDesktopState
             Visibility(
               visible: isExamplesVisible,
               child: Container(
-                width: 700,
+                width: SW * 0.3,
                 height: SH,
                 color: grayRGB040,
                 child: Examples(Update_Code: Update_Code),

@@ -21,11 +21,11 @@ class Code_Examples {
         Type_Example("call-by-need", "let p = newpair(22,33) in left(p)"),
     "CALL_BY_NEED_EXAMPLE_2": Type_Example("call-by-need",
         "let p = newpair(22,33) in begin setleft p = 77; left(p) end"),
-    "CALL_BY_REF_EXAMPLE_1": Type_Example(
-        "call-by-reference",
+    "CALL_BY_REF_EXAMPLE_1": Type_Example("call-by-reference",
         "let swap = proc (x) proc (y)\n                      let temp = x\n                      in begin \n                          set x = y;\n                          set y = temp\n                         end\n         in let a = 33\n         in let b = 44\n         in begin\n             ((swap a) b);\n             -(a,b)\n            end"),
-    "CALL_BY_REF_EXAMPLE_2": Type_Example(
-        "call-by-reference",
-        "let p = proc (z) set z = 44\n         in let x = 33\n         in begin (p x); x end")
+    "CALL_BY_REF_EXAMPLE_2": Type_Example("call-by-reference",
+        "let p = proc (z) set z = 44\n         in let x = 33\n         in begin (p x); x end"),
+    "MUTABLE PAIRS 1": Type_Example("mutable-pairs",
+        "let x = newpair(11, 22) in let f = -(2, right(x)) in f")
   };
 }
