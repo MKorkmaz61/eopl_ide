@@ -1,7 +1,7 @@
 #lang racket
 (require "top.scm")
 (require "globalstack.scm")
-(run "letrec f(x) = -(x,1) in (f 33)}")
+(run "let x = 5 in x")
 (define print-element (lambda (i) (pretty-print i) (display "\n*element*\n")))
 (display "\n**split**\n")
 (map print-element (get-expstack))

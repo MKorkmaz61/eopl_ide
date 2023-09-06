@@ -150,7 +150,7 @@ class _CodeEditorMainScreenDesktopState
     indexLang = 0;
     currentLangDisplay = langNamesDisplay[0];
 
-    const source = "letrec f(x) = -(x,1) in (f 33)}";
+    const source = "let x = 5 in x";
 
     _ctrlCodeField = CodeController(
       text: source,
@@ -180,6 +180,7 @@ class _CodeEditorMainScreenDesktopState
         "int": const TextStyle(color: Colors.amberAccent),
         "double": const TextStyle(color: Colors.amberAccent),
         "String": const TextStyle(color: Colors.amberAccent),
+        "in": const TextStyle(color: Colors.amberAccent),
         "if": const TextStyle(color: grayRGB140),
         "else": const TextStyle(color: grayRGB140),
       },
