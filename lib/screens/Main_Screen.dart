@@ -794,6 +794,8 @@ class _CodeEditorMainScreenDesktopState
             "${stoKeys.elementAt(i)} -> ${stoVals.elementAt(i)}\n";
       }
     } catch (ex) {
+      _ctrlStore.text = " ";
+
       print(ex);
     }
   }
@@ -881,144 +883,150 @@ class _CodeEditorMainScreenDesktopState
                 },
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 7,
-                          child: Container(
-                            width: 200,
-                            height: 700,
-                            color: grayRGB030,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 10,
-                              ),
-                              child: TextField(
-                                readOnly: true,
-                                focusNode: focus_node_env,
-                                maxLines: null,
-                                expands: true,
-                                controller: _ctrlCodeENVField,
-                                textInputAction: TextInputAction.newline,
-                                keyboardType: TextInputType.multiline,
-                                decoration: const InputDecoration(
-                                  labelText: "Current Expression",
-                                  labelStyle: TextStyle(
-                                      color: Colors.blueAccent,
-                                      fontSize: 21,
-                                      fontWeight: FontWeight.bold),
-                                  border: InputBorder.none,
-                                  enabledBorder: InputBorder.none,
-                                  disabledBorder: InputBorder.none,
-                                  errorBorder: InputBorder.none,
+                    Expanded(
+                      flex: 7,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 7,
+                            child: Container(
+                              width: 200,
+                              height: 700,
+                              color: grayRGB030,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 10,
                                 ),
-                                cursorColor: white100,
-                                style: tsTerminal,
+                                child: TextField(
+                                  readOnly: true,
+                                  focusNode: focus_node_env,
+                                  maxLines: null,
+                                  expands: true,
+                                  controller: _ctrlCodeENVField,
+                                  textInputAction: TextInputAction.newline,
+                                  keyboardType: TextInputType.multiline,
+                                  decoration: const InputDecoration(
+                                    labelText: "Current Expression",
+                                    labelStyle: TextStyle(
+                                        color: Colors.blueAccent,
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.bold),
+                                    border: InputBorder.none,
+                                    enabledBorder: InputBorder.none,
+                                    disabledBorder: InputBorder.none,
+                                    errorBorder: InputBorder.none,
+                                  ),
+                                  cursorColor: white100,
+                                  style: tsTerminal,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 7,
-                          child: Container(
-                            width: 200,
-                            height: 700,
-                            color: grayRGB030,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 10,
-                              ),
-                              child: TextField(
-                                readOnly: true,
-                                focusNode: focus_node_env,
-                                maxLines: null,
-                                expands: true,
-                                controller: _ctrlENV,
-                                textInputAction: TextInputAction.newline,
-                                keyboardType: TextInputType.multiline,
-                                decoration: const InputDecoration(
-                                  labelText: "Environment",
-                                  labelStyle: TextStyle(
-                                      color: Colors.blueAccent,
-                                      fontSize: 21,
-                                      fontWeight: FontWeight.bold),
-                                  border: InputBorder.none,
-                                  enabledBorder: InputBorder.none,
-                                  disabledBorder: InputBorder.none,
-                                  errorBorder: InputBorder.none,
+                          Expanded(
+                            flex: 7,
+                            child: Container(
+                              width: 200,
+                              height: 700,
+                              color: grayRGB030,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 10,
                                 ),
-                                cursorColor: white100,
-                                style: tsTerminal,
+                                child: TextField(
+                                  readOnly: true,
+                                  focusNode: focus_node_env,
+                                  maxLines: null,
+                                  expands: true,
+                                  controller: _ctrlENV,
+                                  textInputAction: TextInputAction.newline,
+                                  keyboardType: TextInputType.multiline,
+                                  decoration: const InputDecoration(
+                                    labelText: "Environment",
+                                    labelStyle: TextStyle(
+                                        color: Colors.blueAccent,
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.bold),
+                                    border: InputBorder.none,
+                                    enabledBorder: InputBorder.none,
+                                    disabledBorder: InputBorder.none,
+                                    errorBorder: InputBorder.none,
+                                  ),
+                                  cursorColor: white100,
+                                  style: tsTerminal,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 7,
-                          child: Container(
-                            width: 200,
-                            height: 700,
-                            color: grayRGB030,
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 12,
-                                vertical: 10,
-                              ),
-                              child: TextField(
-                                focusNode: focus_node_store,
-                                readOnly: true,
-                                maxLines: null,
-                                expands: true,
-                                controller: _ctrlStore,
-                                textInputAction: TextInputAction.newline,
-                                keyboardType: TextInputType.multiline,
-                                decoration: const InputDecoration(
-                                  labelText: "Store",
-                                  labelStyle: TextStyle(
-                                      color: Colors.blueAccent,
-                                      fontSize: 21,
-                                      fontWeight: FontWeight.bold),
-                                  border: InputBorder.none,
-                                  enabledBorder: InputBorder.none,
-                                  disabledBorder: InputBorder.none,
-                                  errorBorder: InputBorder.none,
+                          Expanded(
+                            flex: 7,
+                            child: Container(
+                              width: 200,
+                              height: 700,
+                              color: grayRGB030,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 10,
                                 ),
-                                cursorColor: white100,
-                                style: tsTerminal,
+                                child: TextField(
+                                  focusNode: focus_node_store,
+                                  readOnly: true,
+                                  maxLines: null,
+                                  expands: true,
+                                  controller: _ctrlStore,
+                                  textInputAction: TextInputAction.newline,
+                                  keyboardType: TextInputType.multiline,
+                                  decoration: const InputDecoration(
+                                    labelText: "Store",
+                                    labelStyle: TextStyle(
+                                        color: Colors.blueAccent,
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.bold),
+                                    border: InputBorder.none,
+                                    enabledBorder: InputBorder.none,
+                                    disabledBorder: InputBorder.none,
+                                    errorBorder: InputBorder.none,
+                                  ),
+                                  cursorColor: white100,
+                                  style: tsTerminal,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Spacer(),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 3,
-                      height: 100,
-                      decoration: BoxDecoration(
-                          color: grayRGB140,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: SfSlider(
-                        shouldAlwaysShowTooltip: true,
-                        min: 0,
-                        activeColor: Colors.amber,
-                        inactiveColor: Colors.blueAccent,
-                        max: Code_Utils.instance.GL_EXP_LIST.length - 2,
-                        value: _value,
-                        interval: 1,
-                        showTicks: true,
-                        showLabels: true,
-                        enableTooltip: true,
-                        minorTicksPerInterval: 1,
-                        onChanged: (dynamic value) {
-                          setState(() {
-                            _value = double.parse(value.toString()).toInt();
-                          });
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 3,
+                        height: 100,
+                        decoration: BoxDecoration(
+                            color: grayRGB140,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: SfSlider(
+                          shouldAlwaysShowTooltip: true,
+                          min: 0,
+                          activeColor: Colors.amber,
+                          inactiveColor: Colors.blueAccent,
+                          max: Code_Utils.instance.GL_EXP_LIST.length - 2,
+                          value: _value,
+                          interval: 1,
+                          showTicks: true,
+                          showLabels: true,
+                          enableTooltip: true,
+                          minorTicksPerInterval: 1,
+                          onChanged: (dynamic value) {
+                            setState(() {
+                              _value = double.parse(value.toString()).toInt();
+                            });
 
-                          Update_Slider(_value);
-                        },
+                            Update_Slider(_value);
+                          },
+                        ),
                       ),
                     ),
                     const SizedBox(
